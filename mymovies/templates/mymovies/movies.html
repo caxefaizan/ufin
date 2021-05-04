@@ -1,0 +1,9 @@
+{% if movies %}
+    <ul>
+    {% for x in movies %}
+        <li>{{x}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No movies are available.</p>
+{% endif %}
