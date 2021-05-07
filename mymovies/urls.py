@@ -1,6 +1,9 @@
 from django.urls import path
 from . import views 
+from . api import RegisterApi
+
+
 urlpatterns = [
     path('movies/', views.movies, name = 'movies'),
-    path('Register/', views.register, name = 'register'),
+    path('register/', RegisterApi.as_view()),
 ]

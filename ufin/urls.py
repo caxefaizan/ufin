@@ -18,9 +18,19 @@ from django.urls import path, include
 from rest_framework.urlpatterns import format_suffix_patterns
 from mymovies import views
 from . router import router
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
+from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mymovies.urls')),
     path('', include(router.urls)),
+    path('get_jwt_token/', obtain_jwt_token), # GET JET TOKEN
+    path('refresh_jwt_token/', refresh_jwt_token), # REFRESH JET TOKEN
+    path('verify_jwt_token/', verify_jwt_token), # VERIFY JET TOKEN
+    path('token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', jwt_views.TokenRefreshView.as_view(),name='token_refresh'),
 ]
+
+
+    
