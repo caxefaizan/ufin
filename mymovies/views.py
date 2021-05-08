@@ -21,7 +21,3 @@ def movies(request):
 		m.save()
 	return JsonResponse(movies)
 
-
-def register(request):
-	return HttpResponse("You are at the register page")
-

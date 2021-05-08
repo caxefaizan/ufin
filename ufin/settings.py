@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #local apps
     'mymovies.apps.MymoviesConfig',
     'rest_framework',
+    'rest_framework.authtoken',
 
 ]
 
